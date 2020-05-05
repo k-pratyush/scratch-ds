@@ -1,6 +1,8 @@
 #include<iostream>
 #include<queue>
 #include<stack>
+#include<algorithm>
+#include<vector>
 
 using namespace std;
 
@@ -125,7 +127,24 @@ void createTree() {
 }
 
 
+int height(Node* root) {
+    if(root)
+        return 1 + max(height(root -> left), height(root -> right));
+    return 0;
+}
+
+void diagonal(Node* root, int ht, vector<int> &arr) {
+    if(root) {
+        arr[ht] +=  root -> data;
+        diagonal(root -> right, ht, arr);
+        diagonal(root -> left, ht + 1, arr);
+    }
+}
+
 int main() {
     createTree();
-    cout << adder() << endl;
+    vector<int> arr(height(root), 0);
+    diagonal(root, 0, arr);
+    for(int i : arr)
+        cout << i << " ";
 }

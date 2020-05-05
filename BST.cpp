@@ -171,6 +171,5 @@ int main() {
 	cout << "\n";
 	search(root, 5);
 
-	strNode* t = createPostfixTree("ab+ef*g*-");
 	//inOrder(t);
 }

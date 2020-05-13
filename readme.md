@@ -3,7 +3,6 @@
 
     * Implementations
         * graph & it's algorithms
-        * sorting techniques
         * disjoint set 
         * trie
         * segment tree

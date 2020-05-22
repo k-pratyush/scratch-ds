@@ -47,9 +47,19 @@ int main() {
     for(int i = 0; i < r; i++) {
         for(int j = 0; j < c; j++) {
             cin >> A[i][j];
-            // if(!A[i][j])
-            //     A[i][j] = I;
         }
     }
+
+    freopen("adj_matrix/test2.txt", "r", stdin);
+    cin >> r >> c;
+    vector<vector<int> > cost_A(r, vector<int>(c));
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) {
+            cin >> cost_A[i][j];
+            if(!cost_A[i][j])
+                cost_A[i][j] = I;
+        }
+    }
+    cout << cost_A[0][0];
     dfs(A, 1, A.size());
 }
